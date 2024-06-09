@@ -1,0 +1,156 @@
+[
+  {
+    "Meno": "J.R.R. Tolkien",
+    "DatumNarodenia": "03.01.1892",
+    "DatumUmrtia": "02.09.1973",
+    "Obrazok": "jrr_tolkien.png",
+    "Kod": "OL26320A"
+  },
+  {
+    "Meno": "William Shakespeare",
+    "DatumNarodenia": "26.04.1564",
+    "DatumUmrtia": "23.04.1616",
+    "Obrazok": "william_shakespeare.png",
+    "Kod": null
+  },
+  {
+    "Meno": "Jane Austen",
+    "DatumNarodenia": "16.12.1775",
+    "DatumUmrtia": "18.07.1817",
+    "Obrazok": "jane_austen.png",
+    "Kod": "OL21594A"
+  },
+  {
+    "Meno": "Charles Dickens",
+    "DatumNarodenia": "07.02.1812",
+    "DatumUmrtia": "09.06.1870",
+    "Obrazok": "charles_dickens.png",
+    "Kod": "OL24638A"
+  },
+  {
+    "Meno": "Leo Tolstoy",
+    "DatumNarodenia": "09.09.1828",
+    "DatumUmrtia": "20.11.1910",
+    "Obrazok": "leo_tolstoy.png",
+    "Kod": null
+  },
+  {
+    "Meno": "Ernest Hemingway",
+    "DatumNarodenia": "21.07.1899",
+    "DatumUmrtia": "02.07.1961",
+    "Obrazok": "ernest_hemingway.png",
+    "Kod": "OL13640A"
+  },
+  {
+    "Meno": "George Orwell",
+    "DatumNarodenia": "25.06.1903",
+    "DatumUmrtia": "21.01.1950",
+    "Obrazok": "george_orwell.png",
+    "Kod": null
+  },
+  {
+    "Meno": "F. Scott Fitzgerald",
+    "DatumNarodenia": "24.09.1896",
+    "DatumUmrtia": "21.12.1940",
+    "Obrazok": "f_scott_fitzgerald.png",
+    "Kod": "OL27349A"
+  },
+  {
+    "Meno": "Gabriel Garcia Marquez",
+    "DatumNarodenia": "06.03.1927",
+    "DatumUmrtia": "17.04.2014",
+    "Obrazok": "gabriel_garcia_marquez.png",
+    "Kod": null
+  },
+  {
+    "Meno": "Christopher Paolini",
+    "DatumNarodenia": "17.11.1983",
+    "DatumUmrtia": null,
+    "Obrazok": "",
+    "Kod": "OL14015A"
+  },
+  {
+    "Meno": "George R.R. Martin",
+    "DatumNarodenia": "20.09.1948",
+    "DatumUmrtia": null,
+    "Obrazok": "",
+    "Kod": "OL21636A"
+  },
+  {
+    "Meno": "Stephen King",
+    "DatumNarodenia": "21.09.1947",
+    "DatumUmrtia": null,
+    "Obrazok": "",
+    "Kod": "OL21643A"
+  },
+  {
+    "Meno": "C.S. Lewis",
+    "DatumNarodenia": "29.11.1898",
+    "DatumUmrtia": "22.11.1963",
+    "Obrazok": "cs_lewis.png",
+    "Kod": "OL27077A"
+  },
+  {
+    "Meno": "Oscar Wilde",
+    "DatumNarodenia": "16.10.1854",
+    "DatumUmrtia": "30.11.1900",
+    "Obrazok": "",
+    "Kod": "OL27533A"
+  },
+  {
+    "Meno": "Herman Melville",
+    "DatumNarodenia": "01.08.1819",
+    "DatumUmrtia": "28.09.1891",
+    "Obrazok": "",
+    "Kod": "OL19998A"
+  },
+  {
+    "Meno": "Charlotte Brontë",
+    "DatumNarodenia": "21.04.1816",
+    "DatumUmrtia": "31.03.1855",
+    "Obrazok": "",
+    "Kod": "OL23584A"
+  },
+  {
+    "Meno": "Miguel de Cervantes",
+    "DatumNarodenia": "29.09.1547",
+    "DatumUmrtia": "23.04.1616",
+    "Obrazok": "",
+    "Kod": "OL31519A"
+  },
+  {
+    "Meno": "Aldous Huxley",
+    "DatumNarodenia": "26.07.1894",
+    "DatumUmrtia": "22.11.1963",
+    "Obrazok": "",
+    "Kod": "OL18634A"
+  },
+  {
+    "Meno": "Jack Kerouac",
+    "DatumNarodenia": "12.03.1922",
+    "DatumUmrtia": "21.10.1969",
+    "Obrazok": "",
+    "Kod": "OL27612A"
+  },
+  {
+    "Meno": "Anthony Burgess",
+    "DatumNarodenia": "25.02.1917",
+    "DatumUmrtia": "22.11.1993",
+    "Obrazok": "",
+    "Kod": "OL18822A"
+  },
+  {
+    "Meno": "Ray Bradbury",
+    "DatumNarodenia": "22.08.1920",
+    "DatumUmrtia": "05.06.2012",
+    "Obrazok": "",
+    "Kod": "OL21642A"
+  },
+  {
+    "Meno": "Brandon Sanderson",
+    "DatumNarodenia": "19.12.1975",
+    "DatumUmrtia": null,
+    "Obrazok": "",
+    "Kod": "OL1394865A"
+  }
+]

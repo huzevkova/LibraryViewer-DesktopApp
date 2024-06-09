@@ -1,0 +1,118 @@
+﻿<Window x:Class="KniznicaWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:kniznicaLibrary="clr-namespace:KniznicaLibrary;assembly=KniznicaLibrary"
+        mc:Ignorable="d"
+        Title="Knižnica App" Height="450" Width="800">
+     <Window.Resources>
+          <ContextMenu x:Key="KnihaContextMenu">
+               <MenuItem Header="Uprav knihu" Click="EditujVyber"/>
+               <MenuItem Header="Odstráň knihu" Click="OdstranObjekt"/>
+          </ContextMenu>
+          <ContextMenu x:Key="VolneKnihyContextMenu">
+               <MenuItem Header="Pridaj knihu..." Click="PridajKnihu"/>
+          </ContextMenu>
+          <ContextMenu x:Key="AutorContextMenu">
+               <MenuItem Header="Uprav autora" Click="EditujVyber"/>
+               <MenuItem Header="Odstráň autora" Click="OdstranObjekt"/>
+          </ContextMenu>
+          <ContextMenu x:Key="VolneAutoriContextMenu">
+               <MenuItem Header="Pridaj autora..." Click="PridajAutora"/>
+          </ContextMenu>
+     </Window.Resources>
+     <Grid x:Name="mainGrid">
+         <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"></RowDefinition>
+              <RowDefinition Height="Auto"></RowDefinition>
+              <RowDefinition Height="2*"></RowDefinition>
+              <RowDefinition Height="*"/>
+         </Grid.RowDefinitions>
+         <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="2*"/>
+              <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <Menu Grid.ColumnSpan="3" FontSize="16">
+              <MenuItem Header="_Kniznica">
+                   <MenuItem Header="Zoznam autorov" Click="UkazAutorov"/>
+                   <MenuItem Header="Otvor knihu" Click="OtvorDetailKnihy"></MenuItem>
+                   <MenuItem Header="Otvor autora" Click="OtvorDetailAutora"></MenuItem>
+                   <MenuItem Header="Pridať poličku..." Click="PridajPolicku"/>
+                   <MenuItem Header="Pridať knihu..." Click="PridajKnihu"/>
+                   <MenuItem Header="Pridať autora..." Click="PridajAutora"></MenuItem>
+                   <Separator></Separator>
+                   <MenuItem Header="Skončiť" Click="KoniecProgramu"/>
+              </MenuItem>
+              <MenuItem Header="_Úpravy">
+                   <MenuItem x:Name="EditMenuItem" Header="Editovať..." Click="EditujVyber"/>
+                   <MenuItem x:Name="RemoveMenuItem" Header="Odstrániť" Click="OdstranObjekt"/>
+              </MenuItem>
+              <MenuItem Header="_Pomocník">
+                   <MenuItem Header="O programe..." Click="OPrograme"/>
+                   <MenuItem Header="Vypnúť / Zapnúť farebnú schému" Click="ZmenFarby"/>
+              </MenuItem>
+         </Menu>
+          <Label x:Name="NazovZoznamu" Grid.Row="1" Grid.Column="1" FontSize="16" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+          <Border Grid.Row="1"  Grid.Column="0" Grid.RowSpan="3" BorderBrush="Black" BorderThickness="3">
+               <StackPanel x:Name="PolickyStack">
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Margin="10">Poličky</TextBlock>
+               </StackPanel>
+         </Border>
+         <Border Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" BorderBrush="Gray" BorderThickness="3">
+              <DockPanel x:Name="Preview">
+                    <TextBlock DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="10" Margin="5">Ukážka:</TextBlock>
+                    <Image x:Name="ImagePreview"/>
+               </DockPanel>
+          </Border>
+         <Border Grid.Row="3"  Grid.Column="2" BorderBrush="Gray" BorderThickness="3">
+               <StackPanel>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Margin="10">Štatistika</TextBlock>
+                    <RichTextBox x:Name="statistika" BorderBrush="{x:Null}" IsEnabled="False"/>
+               </StackPanel>
+         </Border>
+          <ListBox x:Name="AutoriList" ItemsSource="{Binding ZoznamAutorov}" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Visibility="Hidden" FontSize="14" SelectionChanged="VyberAutora" MouseDoubleClick="OtvorDetailAutora" MouseRightButtonDown="OtvorMenu" KeyDown="KeyOvladac">
+               <ListBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type kniznicaLibrary:Autor}">
+                         <Grid Width="700" MouseRightButtonDown="OtvorMenu">
+                              <Grid.ColumnDefinitions>
+                                   <ColumnDefinition Width="2*"></ColumnDefinition>
+                                   <ColumnDefinition Width="1*"></ColumnDefinition>
+                                   <ColumnDefinition Width="1*"></ColumnDefinition>
+                                   <ColumnDefinition Width="1*"></ColumnDefinition>
+                              </Grid.ColumnDefinitions>
+                              <TextBlock Grid.Column="0" Text="{Binding Meno}" Margin="5" FontStyle="Italic" HorizontalAlignment="Center"></TextBlock>
+                              <TextBlock Grid.Column="1" Text="{Binding DatumNarodenia}" HorizontalAlignment="Center"></TextBlock>
+                              <TextBlock Grid.Column="2" Text="{Binding DatumUmrtia}" HorizontalAlignment="Center"></TextBlock>
+                              <TextBlock Grid.Column="3" Text="{Binding ZoznamKnihAutora.Count}" HorizontalAlignment="Center"></TextBlock>
+                         </Grid>
+                    </DataTemplate>
+               </ListBox.ItemTemplate>
+          </ListBox>
+          <ListBox x:Name="KnihyList" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" SelectionChanged="VyberKnihy" ItemsSource="{Binding ZoznamKnih}" FontSize="14" MouseDoubleClick="OtvorDetailKnihy" MouseRightButtonDown="OtvorMenu" KeyDown="KeyOvladac">
+              <ListBox.ItemTemplate>
+              <DataTemplate DataType="kniznicaLibrary:Kniha">
+                         <Grid Width="700" MouseRightButtonDown="OtvorMenu">
+                              <Grid.ColumnDefinitions>
+                                   <ColumnDefinition Width="4*"></ColumnDefinition>
+                                   <ColumnDefinition Width="4*"></ColumnDefinition>
+                                   <ColumnDefinition Width="2*"></ColumnDefinition>
+                                   <ColumnDefinition Width="*"></ColumnDefinition>
+                                   <ColumnDefinition Width="*"></ColumnDefinition>
+                                   <ColumnDefinition Width="*"></ColumnDefinition>
+                                   <ColumnDefinition Width="*"></ColumnDefinition>
+                              </Grid.ColumnDefinitions>
+                              <TextBlock Grid.Column="0" Text="{Binding Nazov}" Margin="5" FontStyle="Italic"></TextBlock>
+                              <TextBlock Grid.Column="1" Text="{Binding AutorKnihy}" Margin="5"></TextBlock>
+                              <TextBlock Grid.Column="2" Text="{Binding RokVydania}" Margin="5"></TextBlock>
+                              <CheckBox Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding Path=Precitana, Mode=TwoWay}"/>
+                              <CheckBox Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding Path=NaNeskor, Mode=TwoWay}"/>
+                              <CheckBox Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding Path=Pozicana, Mode=TwoWay}"/>
+                              <CheckBox Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding Path=Kupena, Mode=TwoWay}"/>
+                         </Grid>
+                    </DataTemplate>
+              </ListBox.ItemTemplate>
+          </ListBox>
+     </Grid>
+</Window>

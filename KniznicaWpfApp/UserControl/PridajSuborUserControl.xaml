@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="KniznicaWpfApp.PridajSuborUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="500">
+    <Grid>
+         <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+         </Grid.ColumnDefinitions>
+         <Button x:Name="pridajButton" Grid.Row="0" Padding="20, 10, 20, 10" HorizontalAlignment="Center" VerticalAlignment="Center" Click="OtvorSubory">Pridať...</Button>
+         <Label x:Name="subor" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,10" FontSize="14" HorizontalAlignment="Center"></Label>
+
+    </Grid>
+</UserControl>

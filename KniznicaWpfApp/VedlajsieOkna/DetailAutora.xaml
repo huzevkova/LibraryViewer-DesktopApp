@@ -1,0 +1,29 @@
+﻿<Window x:Class="KniznicaWpfApp.DetailAutora"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Detail Autora" Height="450" Width="500" MinHeight="510" MinWidth="250"
+        SizeChanged="ZmenaVelkosti"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+          <Grid.RowDefinitions>
+               <RowDefinition Height="*"/>
+               <RowDefinition Height="Auto"/>
+               <RowDefinition Height="Auto"/>
+               <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+         <Grid Grid.Row="3" Background="SandyBrown"/>
+          <Ellipse Grid.Row="0" x:Name="elipsa"  Width="200" Height="200">
+              <Ellipse.Fill>
+                   <ImageBrush x:Name="image" Stretch="UniformToFill"/>
+              </Ellipse.Fill>
+         </Ellipse>
+         <TextBlock Grid.Row="1" x:Name="meno" Text="{Binding Meno}" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" MouseLeftButtonDown="OtvorStranku"/>
+          <TextBlock Grid.Row="2" x:Name="roky" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+          <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" FontSize="14">
+               <StackPanel x:Name="knihyPanel"/>
+          </ScrollViewer>
+     </Grid>
+</Window>
