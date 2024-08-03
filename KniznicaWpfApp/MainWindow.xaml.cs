@@ -38,6 +38,7 @@ namespace KniznicaWpfApp
                     Directory.SetCurrentDirectory(s.ToString());
                }
 
+
                WindowState = WindowState.Maximized;
                Closing += MainWindow_Closing;
                DataContext = this;
@@ -444,7 +445,11 @@ namespace KniznicaWpfApp
                } 
                else if (e.Key == Key.Enter)
                {
-                    if (AutoriList.Visibility == Visibility.Visible && AutoriList.SelectedItem != null)
+                    if (sender is TextBox)
+                    {
+                         SearchButton_OnClick(sender, e);
+                    }
+                    else if (AutoriList.Visibility == Visibility.Visible && AutoriList.SelectedItem != null)
                     {
                          OtvorDetailAutora(sender, null);
                     }
@@ -479,6 +484,22 @@ namespace KniznicaWpfApp
                     AutoriList.Background = null;
                }
                
+          }
+
+          private void SearchButton_OnClick(object sender, RoutedEventArgs e)
+          {
+               if (SearchBox.Text.Length != 0)
+               {
+                    _aktualZoznamKnih = _kniznica.ZoznamVsetkychKnih.NajdiPodlaPodmienky(kniha =>
+                         kniha.Nazov.ToLower().Contains(SearchBox.Text.ToLower()) || kniha.AutorKnihy.ToLower().Contains(SearchBox.Text.ToLower()));
+
+                    AutoriList.Visibility = Visibility.Hidden;
+                    KnihyList.Visibility = Visibility.Visible;
+                    KnihyList.SelectedItem = null;
+                    ImagePreview.Source = null;
+                    KnihyList.ItemsSource = _aktualZoznamKnih;
+                    NazovZoznamu.Content = StringKonst.Vyhladavanie;
+               }
           }
      }
 }

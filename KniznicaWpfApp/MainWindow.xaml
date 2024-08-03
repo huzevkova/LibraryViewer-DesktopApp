@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:kniznicaLibrary="clr-namespace:KniznicaLibrary;assembly=KniznicaLibrary"
         mc:Ignorable="d"
-        Title="Knižnica App" Height="450" Width="800">
+        Title="Knižnica App" Height="1080" Width="1920">
      <Window.Resources>
           <ContextMenu x:Key="KnihaContextMenu">
                <MenuItem Header="Uprav knihu" Click="EditujVyber"/>
@@ -54,6 +54,16 @@
                    <MenuItem Header="Vypnúť / Zapnúť farebnú schému" Click="ZmenFarby"/>
               </MenuItem>
          </Menu>
+          <Grid Grid.Column="2">
+               <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+               </Grid.ColumnDefinitions>
+               <TextBox x:Name="SearchBox" Grid.Column="0" KeyDown="KeyOvladac"></TextBox>
+               <Button Grid.Column="1" Click="SearchButton_OnClick">
+                    <Image MaxHeight="25" Source="/search_icon.jpg"/>
+               </Button>
+          </Grid>
           <Label x:Name="NazovZoznamu" Grid.Row="1" Grid.Column="1" FontSize="16" FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
           <Border Grid.Row="1"  Grid.Column="0" Grid.RowSpan="3" BorderBrush="Black" BorderThickness="3">
                <StackPanel x:Name="PolickyStack">

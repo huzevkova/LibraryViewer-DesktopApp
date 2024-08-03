@@ -16,11 +16,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="search.png" />
+    <None Remove="search_icon.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\KniznicaLibrary\KniznicaLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="search_icon.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

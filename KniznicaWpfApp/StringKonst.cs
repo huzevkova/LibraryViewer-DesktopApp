@@ -19,5 +19,6 @@ namespace KniznicaWpfApp
           public const string AutoriNadpis = "AUTORI";
           public const string ObrazkyKnihyKos = ObrazkyZdrojKnihy + "Kos/";
           public const string ObrazkyAutoriKos = ObrazkyZdrojKnihy + "Kos/";
+          public const string Vyhladavanie = "Vyhľadávanie";
      }
 }
